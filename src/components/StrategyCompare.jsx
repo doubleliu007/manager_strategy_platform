@@ -191,7 +191,7 @@ export default function StrategyCompare({ onSelectManager }) {
             同类<em>策略</em>横向比较
           </h1>
           <p>
-            将各委外管理人的特色策略按"固收 / 权益 / 混合类"三大方向及细分策略归集，
+            将各合作机构的特色策略按"固收 / 权益 / 混合类"三大方向及细分策略归集，
             横向对比同类策略的参考年化、回撤、夏普等核心指标，辅助快速筛选与优选适配的合作管理人。
           </p>
           <div className="hero-stats">

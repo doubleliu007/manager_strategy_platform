@@ -11,7 +11,7 @@ export default function Header({ onHome, view, onNav }) {
         <div className="top-divider" />
         <div onClick={onHome} style={{ cursor: 'pointer' }}>
           <div className="top-title">
-            委外<span>管理人</span>策略展示平台
+            合作<span>机构</span>策略展示平台
           </div>
           <div className="top-sub">MANAGER STRATEGY PLATFORM</div>
         </div>

@@ -55,7 +55,7 @@ export default function ManagerList({ onSelect }) {
       <div className="hero">
         <div className="hero-inner">
           <h1>
-            委外<em>管理人</em>信息管理与检索平台
+            合作<em>机构</em>信息管理与检索平台
           </h1>
           <p>
             汇集券商资管、基金、保险资管、信托等外部管理人的公司背景、特色策略、实盘表现与合作落地情况。
