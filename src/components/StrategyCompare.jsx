@@ -18,11 +18,14 @@ const allStrategies = managers.flatMap((m) =>
   }))
 )
 
+const ALL_GROUP = '全部'
+
 // 统计每个一级分类下的策略数量
 const groupCounts = strategyGroups.reduce((acc, g) => {
   acc[g] = allStrategies.filter((s) => s.group === g).length
   return acc
 }, {})
+groupCounts[ALL_GROUP] = allStrategies.length
 
 // 从形如 "3.98%" / "-0.40%" / "约3%" / "R2" 的文本中解析数值
 function parseNum(val) {
@@ -123,19 +126,20 @@ function StrategyTable({ rows, sort, onSort, onSelectManager }) {
 }
 
 export default function StrategyCompare({ onSelectManager }) {
-  const [group, setGroup] = useState(strategyGroups[0])
+  const [group, setGroup] = useState(ALL_GROUP)
   const [sub, setSub] = useState('全部')
   const [query, setQuery] = useState('')
   const [sort, setSort] = useState({ key: null, dir: 'desc' })
 
-  // 当前一级分类下、真实存在策略的二级分类
-  const subsInGroup = useMemo(
-    () =>
-      strategyTaxonomy[group].filter((sc) =>
+  // 当前一级分类下、真实存在策略的二级分类（"全部"时汇总所有一级分类）
+  const subsInGroup = useMemo(() => {
+    const groups = group === ALL_GROUP ? strategyGroups : [group]
+    return groups.flatMap((g) =>
+      strategyTaxonomy[g].filter((sc) =>
         allStrategies.some((s) => s.category === sc)
-      ),
-    [group]
-  )
+      )
+    )
+  }, [group])
 
   const q = query.trim().toLowerCase()
 
@@ -225,7 +229,7 @@ export default function StrategyCompare({ onSelectManager }) {
 
           <div className="filter-row">
             <span className="filter-label">一级分类</span>
-            {strategyGroups.map((g) => (
+            {[ALL_GROUP, ...strategyGroups].map((g) => (
               <button
                 key={g}
                 className={`chip chip-lg ${group === g ? 'active' : ''}`}
@@ -267,7 +271,7 @@ export default function StrategyCompare({ onSelectManager }) {
           sections.map((sec) => (
             <div className="section" key={sec.sub}>
               <div className="section-title" style={{ marginBottom: 14 }}>
-                {group} · {sec.sub}
+                {getStrategyGroup(sec.sub)} · {sec.sub}
                 <span className="section-count">{sec.rows.length} 个策略</span>
               </div>
               <StrategyTable

@@ -777,12 +777,13 @@ button {
   font-weight: 700;
   color: var(--ink);
 }
+/* 中国习惯：收益(涨)红色，回撤/亏损(跌)绿色 */
 .perf-table .pos {
-  color: var(--green);
+  color: var(--red);
   font-weight: 600;
 }
 .perf-table .neg {
-  color: var(--red);
+  color: var(--green);
   font-weight: 600;
 }
 
