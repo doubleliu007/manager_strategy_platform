@@ -933,6 +933,34 @@ button {
   background: rgba(255, 255, 255, 0.28);
 }
 
+/* 固定列宽，保证不同二级分类表格上下列对齐 */
+.compare-table {
+  table-layout: fixed;
+}
+.compare-table .col-mgr {
+  width: 11%;
+}
+.compare-table .col-strat {
+  width: 16%;
+}
+.compare-table .col-risk {
+  width: 9%;
+}
+.compare-table .col-metric {
+  width: 9.5%;
+}
+.compare-table .col-highlight {
+  width: 21%;
+}
+.compare-table .col-go {
+  width: 4%;
+}
+.compare-table th,
+.compare-table td {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
 .compare-table th.sortable {
   cursor: pointer;
   user-select: none;
@@ -969,7 +997,6 @@ button {
 .cmp-strat {
   font-weight: 600;
   color: var(--ink);
-  min-width: 180px;
 }
 .cmp-risk {
   font-size: 12px;

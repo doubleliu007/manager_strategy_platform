@@ -72,6 +72,16 @@ function StrategyTable({ rows, sort, onSort, onSelectManager }) {
   return (
     <div className="table-wrap">
       <table className="perf-table compare-table">
+        <colgroup>
+          <col className="col-mgr" />
+          <col className="col-strat" />
+          <col className="col-risk" />
+          {COMPARE_COLS.map((c) => (
+            <col key={c.key} className="col-metric" />
+          ))}
+          <col className="col-highlight" />
+          <col className="col-go" />
+        </colgroup>
         <thead>
           <tr>
             <th>管理人</th>
