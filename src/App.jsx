@@ -65,7 +65,7 @@ export default function App() {
       <footer className="footer">
         <div className="risk">风险提示：理财非存款 · 产品有风险 · 投资须谨慎</div>
         <div>
-          © 宁银理财有限责任公司 · 委外管理人策略展示平台（内部使用）
+          © 宁银理财有限责任公司 · 合作机构策略展示平台（内部使用）
         </div>
         <div style={{ opacity: 0.6, marginTop: 4 }}>
           本平台数据仅供内部投研参考，产品历史业绩不代表未来表现。
