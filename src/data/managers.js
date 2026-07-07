@@ -47,7 +47,7 @@ export const managers = [
     strategies: [
       {
         name: '沪深300微增强对冲打新策略',
-        category: '对冲打新',
+        category: '对冲/中性',
         risk: '中低',
         desc: '通过"指数微增强 + 股指期货对冲 + 固收低波管理 + 打新增强"四位一体开展。核心风险在于基差管理，泰康股指期货管理规模、管理能力均在市场第一梯队。参与双边新股网下申购增厚收益。',
         metrics: [
@@ -59,7 +59,7 @@ export const managers = [
       },
       {
         name: '上证50指数复制对冲策略',
-        category: '对冲打新',
+        category: '对冲/中性',
         risk: '低',
         desc: '上证50全部成分股均无禁投限制，可完全复制。仅参与单边新股申购。2.5亿规模条件下测算历史95%分位最大回撤仅-0.47%，中性收益测算约3%左右。',
         metrics: [
@@ -71,7 +71,7 @@ export const managers = [
       },
       {
         name: '固定收益投资',
-        category: '固收',
+        category: '中长期纯债',
         risk: '低',
         desc: '债市长期走势由宏观基本面决定。基于FIFAM分析系统，从仓位久期、类属资产、行业板块个券三个层级构建组合，注重宏观研究深度与新品种挖掘。',
         metrics: [
@@ -82,7 +82,7 @@ export const managers = [
       },
       {
         name: '权益投资',
-        category: '权益',
+        category: '主动选股',
         risk: '高',
         desc: '坚持"深度研究为本、长短结合、全面灵活、为投资所用"，基于MVPCT系统进行仓位决策，三级股票备选库管理，长期与中国优秀企业并肩成长。',
         metrics: [
@@ -143,7 +143,7 @@ export const managers = [
     strategies: [
       {
         name: '固收+复合策略',
-        category: '固收+',
+        category: '固收+复合',
         risk: '中高',
         desc: '固收部分配置高等级债券获取稳定票息，并灵活运用活跃券交易赚取差价；其他部分通过可转债、股票、ETF、资管产品等多元资产捕捉市场波段和结构性机会。产品初期权益分批建仓，参照CPPI策略构建安全垫后逐步加仓。',
         metrics: [
@@ -154,7 +154,7 @@ export const managers = [
       },
       {
         name: 'OCI投资策略',
-        category: '权益/OCI',
+        category: '主动选股',
         risk: '中',
         desc: '追求可持续的盈利增长（资本利得）或可持续的自由现金流（长期稳定分红）。结合分红节奏择时建仓，11-12月及2-3月为较好建仓期，仓位目标95%-100%，以绝对收益为目标追求账户稳健增值。',
         metrics: [
@@ -223,7 +223,7 @@ export const managers = [
     strategies: [
       {
         name: '固收+型（聚宝2号）',
-        category: '固收+',
+        category: '固收+权益',
         risk: '中',
         desc: '80%债券+20%股票的经典股债平衡策略。固收部分以高等级国企央企AAA信用债打底，权益部分灵活择机（当前重仓AI科技约60%）。核心目标：严控风险、降低回撤，追求长期绝对收益。',
         metrics: [
@@ -235,7 +235,7 @@ export const managers = [
       },
       {
         name: '纯债增强型（永聚固收113号）',
-        category: '固收',
+        category: '纯债增强',
         risk: '中低',
         desc: '信用债仓位75%左右（久期5），以高等级信用债、银行二级资本债为主，可转债仓位约17%，一二级债基17%，利率债7%。绝对收益策略，资产结构灵活，收益增强明显，回撤较低。',
         metrics: [
@@ -247,7 +247,7 @@ export const managers = [
       },
       {
         name: 'OCI股票策略',
-        category: '权益/OCI',
+        category: '主动选股',
         risk: '中高',
         desc: '坚持"绝对收益"导向，深度研究并精选竞争格局稳定、低波动的行业龙头企业。以"长期持有、低换手率"为核心，采用"预期股息率"动态加权自动平衡持仓权重。深耕大消费、交通运输、高端制造三大赛道。',
         metrics: [
@@ -260,7 +260,7 @@ export const managers = [
       },
       {
         name: '混合型委托户策略',
-        category: '混合',
+        category: '固收+权益',
         risk: '中',
         desc: '债券占比70%-100%，股票0-30%灵活配置。核心为成长-价值风格轮动模型，跟踪国证成长/价值指数比值变化趋势，结合估值分位与拥挤度动态调整股票仓位，力争穿越风格切换获取稳健超额收益。',
         metrics: [
@@ -273,7 +273,7 @@ export const managers = [
       },
       {
         name: '摊余成本法纯债策略',
-        category: '固收/摊余',
+        category: '摊余成本法',
         risk: '低',
         desc: '主要配置30年期地方债含税新券，杠杆水平保持170%，主要赚取票息收入和息差套利收入。中性情景下税费后年化收益率约3.11%。',
         metrics: [
@@ -348,7 +348,7 @@ export const managers = [
     strategies: [
       {
         name: 'ESG1号（固收+主动权益）',
-        category: '固收+',
+        category: '固收+权益',
         risk: '中',
         desc: '成立于2023年初，策略定位二级债基：80%纯债打底（高等级信用和利率债交易，不做信用下沉）+20%主动权益。风格稳健，回撤控制明显优于同类，同时具备跟涨能力。',
         metrics: [
@@ -360,7 +360,7 @@ export const managers = [
       },
       {
         name: '港股通红利策略（1号/2号）',
-        category: '权益',
+        category: '港股红利',
         risk: '中高',
         desc: '行业比较思维下的主动优选轮动，理性空间认知下的择时波段操作，特定化策略灵活互补设计。在坚持港股通红利为主的基础上，配置10-20%优质成长标的作为特色补充。',
         metrics: [
@@ -372,7 +372,7 @@ export const managers = [
       },
       {
         name: 'ESG专精特新',
-        category: '权益',
+        category: 'ESG/专精特新',
         risk: '高',
         desc: '聚焦高端制造+科技的高成长策略，做多中国优势产业。基于产业趋势结合估值，优选中期维度市场主线细分行业并重仓配置。荣获2025年上证·金理财混合类保险资管产品奖。',
         metrics: [
@@ -396,7 +396,7 @@ export const managers = [
       },
       {
         name: '摊余成本法定制专户',
-        category: '固收/摊余',
+        category: '摊余成本法',
         risk: '低',
         desc: '"利率债+高杠杆"策略，择时配置超长久期利率债，即时拉高杠杆锁定产品收益。收益来源为流动性溢价，超低波动率，R2低风险等级。',
         metrics: [
@@ -468,7 +468,7 @@ export const managers = [
     strategies: [
       {
         name: '货币 / 类货币策略（稳稳1号）',
-        category: '货币',
+        category: '货币策略',
         risk: 'R1-R2',
         desc: '策略遵循风险平价，构建平衡的绝对收益组合。以0.7年为中枢做适度调整，杠杆120%以内，集中配置AAA评级高流动性存单、信用债及利率债。主要投资优质银行存款及存单，每日开放申赎、T+1到账。',
         metrics: [
@@ -480,7 +480,7 @@ export const managers = [
       },
       {
         name: '纯债二永策略（稳稳3号）',
-        category: '固收',
+        category: '二永债策略',
         risk: 'R2',
         desc: '聚焦银行二级资本债及永续债投资。在宏观基本面、货币政策、中观银行业趋势、微观主体及供需分析基础上，于适当时机构建胜率及赔率最高的债券组合。',
         metrics: [
@@ -492,7 +492,7 @@ export const managers = [
       },
       {
         name: '固收+策略（信鑫1号/2号）',
-        category: '固收+',
+        category: '固收+复合',
         risk: 'R2-R3',
         desc: '高等级信用债票息策略为主，力争通过利率债、银行二级资本债波段操作贡献资本利得，通过直投结合公募基金控制转债仓位增厚收益。大类资产配置提升产品夏普比率。',
         metrics: [
@@ -504,7 +504,7 @@ export const managers = [
       },
       {
         name: '量化指增策略（A500/中证1000）',
-        category: '权益',
+        category: '量化/指数增强',
         risk: 'R4',
         desc: '被动指数量化增强，中信证券投顾提供量化股票策略：数据驱动、模型决策的系统化投资方法。投资理念："大数据 + 人工智能 = 最优决策"。',
         metrics: [
@@ -517,7 +517,7 @@ export const managers = [
       },
       {
         name: '主动权益策略（中观优化/产业精选）',
-        category: '权益',
+        category: '主动选股',
         risk: 'R5',
         desc: '中观优化：行业供需结构出发结合自上而下宏观指导，景气度决定胜率、估值决定赔率。产业精选：高股息策略选股，选股股息率行业内前25%分位，寻求中长期稳定收益。',
         metrics: [
@@ -588,7 +588,7 @@ export const managers = [
     strategies: [
       {
         name: '信用债策略（安鑫添利3号）',
-        category: '固收',
+        category: '信用债策略',
         risk: '低',
         desc: '以城投债为主，结合债券的信用评级、流动性、息票等因素，选择具有良好投资价值的债券品种进行投资。依托公司投研优势精选优质城投债配置，综合应用久期、骑乘、杠杆套息等策略增强收益。',
         metrics: [
@@ -600,7 +600,7 @@ export const managers = [
       },
       {
         name: '利率债交易策略（安盈稳利1号）',
-        category: '固收',
+        category: '利率债策略',
         risk: '低',
         desc: '通过分析经济运行情况和资金供求状况，结合对宏观经济政策取向的研判，预测利率水平变动趋势。通过利率波段交易、久期、杠杆等投资策略提升整体收益。',
         metrics: [
@@ -612,7 +612,7 @@ export const managers = [
       },
       {
         name: '纯债委外策略（瑞盈1号）',
-        category: '固收',
+        category: '信用债策略',
         risk: '低',
         desc: '票息策略精选优质区域信用债（主要城投债）作为配置仓位，结合杠杆套息、久期、骑乘策略，根据市场行情动态调整杠杆比率与组合久期获取资本利得。',
         metrics: [
@@ -624,7 +624,7 @@ export const managers = [
       },
       {
         name: '固收+策略（安盈尊享1号）',
-        category: '固收+',
+        category: '固收+复合',
         risk: '中低',
         desc: '固收部分同纯债策略，增强部分根据大类资产性价比动态配置公募基金、打新（北交所、REITs等）的比例和品种。公募基金部分根据市场情绪优选占优风格，以绝对收益为导向、右侧交易为主。',
         metrics: [
@@ -660,15 +660,49 @@ export const managers = [
 // 管理人类型（用于筛选）
 export const managerTypes = ['全部', '保险资管', '信托公司']
 
-// 策略类别（用于筛选）
-export const strategyCategories = [
-  '全部',
-  '固收',
-  '固收+',
-  '权益',
-  '对冲打新',
-  'REITs',
-  '货币',
-  '混合',
-  '权益/OCI',
-]
+// 策略分类体系：一级分类 → 二级分类
+export const strategyTaxonomy = {
+  固收: [
+    '中短债策略',
+    '中长期纯债',
+    '二永债策略',
+    '信用债策略',
+    '利率债策略',
+    '固收+复合',
+    '摊余成本法',
+    '纯债增强',
+    '货币策略',
+    '资产负债匹配',
+  ],
+  权益: [
+    'CTA',
+    'ESG/专精特新',
+    'FOF',
+    'REITs',
+    '主动选股',
+    '对冲/中性',
+    '港股红利',
+    '进取型权益',
+    '量化/指数增强',
+  ],
+  混合类: ['可转债', '固收+权益'],
+}
+
+// 一级分类列表
+export const strategyGroups = Object.keys(strategyTaxonomy)
+
+// 二级分类 → 一级分类 的映射
+export const subCategoryToGroup = Object.entries(strategyTaxonomy).reduce(
+  (acc, [group, subs]) => {
+    subs.forEach((sub) => {
+      acc[sub] = group
+    })
+    return acc
+  },
+  {}
+)
+
+// 根据二级分类获取其所属的一级分类
+export function getStrategyGroup(category) {
+  return subCategoryToGroup[category] || '其他'
+}

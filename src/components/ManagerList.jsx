@@ -1,7 +1,14 @@
 import { useMemo, useState } from 'react'
-import { managers, managerTypes, strategyCategories } from '../data/managers.js'
+import {
+  managers,
+  managerTypes,
+  strategyGroups,
+  getStrategyGroup,
+} from '../data/managers.js'
 import ManagerCard from './ManagerCard.jsx'
 import { SearchIcon } from './Icons.jsx'
+
+const groupFilters = ['全部', ...strategyGroups]
 
 export default function ManagerList({ onSelect }) {
   const [query, setQuery] = useState('')
@@ -13,10 +20,10 @@ export default function ManagerList({ onSelect }) {
     return managers.filter((m) => {
       // 类型筛选
       if (type !== '全部' && m.type !== type) return false
-      // 策略类别筛选
+      // 策略一级分类筛选
       if (
         category !== '全部' &&
-        !m.strategies.some((s) => s.category.includes(category))
+        !m.strategies.some((s) => getStrategyGroup(s.category) === category)
       )
         return false
       // 关键词搜索：名称、标签、策略名、概述
@@ -98,7 +105,7 @@ export default function ManagerList({ onSelect }) {
 
           <div className="filter-row">
             <span className="filter-label">策略方向</span>
-            {strategyCategories.map((c) => (
+            {groupFilters.map((c) => (
               <button
                 key={c}
                 className={`chip ${category === c ? 'active' : ''}`}

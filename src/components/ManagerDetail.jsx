@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import {
   PieChart,
   Pie,
@@ -24,9 +24,19 @@ function cellClass(val) {
   return ''
 }
 
-export default function ManagerDetail({ manager, onBack }) {
-  const [tab, setTab] = useState('基本情况')
+export default function ManagerDetail({
+  manager,
+  onBack,
+  initialTab = '基本情况',
+  highlightStrategy = null,
+}) {
+  const [tab, setTab] = useState(initialTab)
   const initial = manager.shortName.slice(0, 2)
+
+  // 从策略比较页跳转进来时，切到指定 tab
+  useEffect(() => {
+    setTab(initialTab)
+  }, [initialTab, manager.id, highlightStrategy])
 
   return (
     <>
@@ -72,7 +82,9 @@ export default function ManagerDetail({ manager, onBack }) {
 
       <div className="container">
         {tab === '基本情况' && <BasicTab manager={manager} />}
-        {tab === '特色策略' && <StrategyTab manager={manager} />}
+        {tab === '特色策略' && (
+          <StrategyTab manager={manager} highlight={highlightStrategy} />
+        )}
         {tab === '实盘表现' && <PerformanceTab manager={manager} />}
         {tab === '合作落地' && <CooperationTab manager={manager} />}
 
@@ -200,13 +212,33 @@ function BasicTab({ manager }) {
 }
 
 /* ---------------- 特色策略 ---------------- */
-function StrategyTab({ manager }) {
+function StrategyTab({ manager, highlight }) {
+  const highlightRef = useRef(null)
+
+  useEffect(() => {
+    if (highlight && highlightRef.current) {
+      const t = setTimeout(() => {
+        highlightRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        })
+      }, 120)
+      return () => clearTimeout(t)
+    }
+  }, [highlight, manager.id])
+
   return (
     <div className="section">
       <div className="section-title">特色策略介绍（{manager.strategies.length}）</div>
       <div className="strategy-grid">
-        {manager.strategies.map((s, i) => (
-          <div className="strat-card" key={i}>
+        {manager.strategies.map((s, i) => {
+          const isHit = highlight && s.name === highlight
+          return (
+          <div
+            className={`strat-card ${isHit ? 'strat-card-hit' : ''}`}
+            key={i}
+            ref={isHit ? highlightRef : null}
+          >
             <div className="strat-head">
               <div className="strat-name">{s.name}</div>
               <span className="strat-cat">{s.category}</span>
@@ -232,7 +264,8 @@ function StrategyTab({ manager }) {
               </div>
             )}
           </div>
-        ))}
+          )
+        })}
       </div>
     </div>
   )
